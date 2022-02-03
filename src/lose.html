@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lose</title>
+</head>
+<body>
+    <section class="hat">
+        <h1>You lose!!!!</h1>
+    </section>
+    <h2 id="score"></h2>
+    <button onclick="onsubm(this)">Replay</button>
+    <script>
+        "use strict";
+        let score = document.getElementById("score").innerHTML = `Your score is ${localStorage.getItem("score")}`;
+        function onsubm(btn) {
+            document.location.href = "game.html";
+        }
+        let gameOver = new Audio("gameOver.mp3");
+        gameOver.play();
+    </script>
+    <style>
+        button {
+            background: none;
+            border: 1px solid white;
+            width: 300px;
+            height: 30px;
+            color: yellow;
+            display: block;
+            margin: 10px auto;
+            cursor: pointer;
+        }
+        #score {
+            color: red;
+            font-size: 35px;
+            text-align: center;
+            margin-top: 15px;
+        }
+        .hat {
+            width: 100%;
+            height: 220px;
+            border-bottom: 1px solid white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            color: yellow;
+            font-size: 50px;
+        }
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+        body {
+            background: black;
+        }
+    </style>
+</body>
+</html>
